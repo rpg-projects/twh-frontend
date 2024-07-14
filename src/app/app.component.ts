@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,12 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'twh-frontend';
+  discordTag: string = '';
+  password: string = '';
+
+  constructor(private router: Router) {}
+
+  onSubmit() {
+    console.log("hello world");
+  }
 }
