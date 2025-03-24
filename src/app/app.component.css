@@ -4,21 +4,93 @@
   width: 100%;
   padding: 0;
   margin: 0;
+  position: relative;
+  overflow: hidden; /* Prevents unwanted scrolling */
 }
 
-router-outlet {
-  display: none;
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0; /* Keeps background behind everything */
+}
+
+.bg-image {
+  position: absolute;
+  max-width: 200px; /* Adjust size */
+}
+
+.eros,
+.houses,
+.houses2,
+.couple,
+.leaves,
+.mountain {
+  position: absolute; /* Ensures elements can be placed freely */
+}
+
+.eros {
+  top: 20%;
+  left: 5%;
+  width: 12%;
+}
+
+.houses {
+  top: 70%;
+  left: 15%;
+  width: 20%;
+  max-width: 600px;
+  transform: rotate(4deg); /* Corrected rotation */
+}
+
+.houses2 {
+  top: 70%;
+  left: 0%;
+  width: 20%;
+  max-width: 600px;
+  transform: rotate(-4deg); /* Corrected rotation */
+}
+
+.couple {
+  bottom: 10%;
+  left: 40%;
+}
+
+.leaves {
+  top: -2%;
+  right: -0.5%;
+}
+
+.mountain {
+  bottom: 10%;
+  left: 40%;
+}
+
+.content {
+  position: absolute; /* Ensures it floats above everything */
+  margin: 20%;
+  transform: translate(-40%, -50%);
+  text-align: center;
+  z-index: 2; /* Ensures it's above background & other elements */
 }
 
 .login-container {
+  position: absolute; /* Ensures it floats above everything */
+  top: 20%;
+  right: 20%;
+  text-align: center;
+  z-index: 2; /* Ensures it's above background & other elements */
+
   width: 300px;
-  margin: 0 auto;
+
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* 
 .login-container h2 {
   text-align: center;
 }
@@ -50,4 +122,4 @@ router-outlet {
 
 .login-container button:hover {
   background-color: #0056b3;
-}
+} */

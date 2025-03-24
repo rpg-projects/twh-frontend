@@ -1,6 +1,49 @@
 <div class="page">
+  <div class="background">
+    <img src="../assets/images/eros.png" alt="eros" class="bg-image eros" />
+    <img
+      src="../assets/images/houses.png"
+      alt="houses"
+      class="bg-image houses"
+    />
+    <img
+      src="../assets/images/houses.png"
+      alt="houses"
+      class="bg-image houses2"
+    />
+    <img
+      src="../assets/images/couple.png"
+      alt="couple"
+      class="bg-image couple"
+    />
+    <img
+      src="../assets/images/leaves.png"
+      alt="leaves"
+      class="bg-image leaves"
+    />
+    <img
+      src="../assets/images/mountain.png"
+      alt="mountain"
+      class="bg-image mountain"
+    />
+  </div>
+
   <div class="login-container">
-    <h2>Login</h2>
+    <div class="player-select">
+      <input
+        type="text"
+        placeholder="Search your name..."
+        (input)="onSearchInput($event)"
+        [(ngModel)]="selectedPlayer"
+      />
+
+      <ul class="dropdown" *ngIf="filteredPlayers.length">
+        <li *ngFor="let player of filteredPlayers" (click)="onSelect(player)">
+          {{ player }}
+        </li>
+      </ul>
+    </div>
+    <!-- <h2>Login</h2>
     <form (ngSubmit)="onSubmit()">
       <div>
         <label for="username">Username:</label>
@@ -20,11 +63,9 @@
           [(ngModel)]="password"
           name="password"
           required
-        />
-      </div>
+        /> -->
+    <!-- </div>
       <button type="submit">Login</button>
-    </form>
+    </form> -->
   </div>
 </div>
-
-<router-outlet />

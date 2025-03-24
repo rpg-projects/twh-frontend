@@ -1,19 +1,46 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlayerService } from './services/player.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  discordTag: string = '';
-  password: string = '';
+  // discordTag: string = '';
+  // password: string = '';
 
-  constructor(private router: Router) {}
+  players: string[] = [];
+  filteredPlayers: string[] = [];
+  selectedPlayer: string = '';
 
-  onSubmit() {
-    console.log("hello world");
+  constructor(private playerService: PlayerService, private router: Router) {}
+
+  ngOnInit() {
+    this.playerService.getPlayersNames().subscribe((data) => {
+      this.players = data;
+      this.filteredPlayers = data;
+    });
   }
+
+  onSearchInput(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    this.onSearch(inputElement.value);
+  }
+
+  onSearch(query: string) {
+    this.filteredPlayers = this.players.filter((player) =>
+      player.toLowerCase().includes(query.toLowerCase())
+    );
+  }
+
+  onSelect(player: string) {
+    this.selectedPlayer = player;
+    this.router.navigate(['/home']); // Redirect to home
+  }
+
+  // onSubmit() {
+  //   console.log('hello world');
+  // }
 }
