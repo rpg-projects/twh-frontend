@@ -90,6 +90,70 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.player-select {
+  position: relative;
+  width: 250px;
+  margin: 20px auto;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: border 0.3s ease-in-out;
+  background: white;
+  cursor: pointer;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-container:focus-within {
+  border-color: #007bff;
+}
+
+.arrow {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.dropdown li:hover {
+  background: #f0f0f0;
+}
+
 /* 
 .login-container h2 {
   text-align: center;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PlayerService } from './services/player.service';
 
@@ -11,11 +11,17 @@ export class AppComponent {
   // discordTag: string = '';
   // password: string = '';
 
+  isDropdownVisible: boolean = false;
+
   players: string[] = [];
   filteredPlayers: string[] = [];
   selectedPlayer: string = '';
 
-  constructor(private playerService: PlayerService, private router: Router) {}
+  constructor(
+    private playerService: PlayerService,
+    private router: Router,
+    private elementRef: ElementRef
+  ) {}
 
   ngOnInit() {
     this.playerService.getPlayersNames().subscribe((data) => {
@@ -30,14 +36,36 @@ export class AppComponent {
   }
 
   onSearch(query: string) {
-    this.filteredPlayers = this.players.filter((player) =>
-      player.toLowerCase().includes(query.toLowerCase())
-    );
+    const searchTerm = query?.trim() || ''; // Ensure it's always a string
+
+    this.filteredPlayers =
+      searchTerm.length > 0
+        ? this.players.filter((player) =>
+            player.toLowerCase().includes(query.toLowerCase())
+          )
+        : [];
+
+    this.isDropdownVisible = this.filteredPlayers.length > 0;
   }
 
   onSelect(player: string) {
     this.selectedPlayer = player;
+    this.isDropdownVisible = false;
+
     this.router.navigate(['/home']); // Redirect to home
+  }
+
+  toggleDropdown(event: Event) {
+    event.stopPropagation(); // ✅ Prevents immediate closing
+    this.isDropdownVisible = !this.isDropdownVisible;
+  }
+
+  // Detect clicks outside the dropdown
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: Event) {
+    if (this.isDropdownVisible) {
+      this.isDropdownVisible = false;
+    }
   }
 
   // onSubmit() {

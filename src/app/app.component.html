@@ -29,43 +29,27 @@
   </div>
 
   <div class="login-container">
-    <div class="player-select">
+    <div class="player-select" (clickOutside)="isDropdownVisible = false">
       <input
         type="text"
         placeholder="Search your name..."
         (input)="onSearchInput($event)"
         [(ngModel)]="selectedPlayer"
+        (focus)="isDropdownVisible = true"
       />
 
-      <ul class="dropdown" *ngIf="filteredPlayers.length">
+      <span
+        class="arrow"
+        [class.rotated]="isDropdownVisible"
+        (click)="toggleDropdown($event)"
+        >▼</span
+      >
+
+      <ul class="dropdown" *ngIf="isDropdownVisible && filteredPlayers.length">
         <li *ngFor="let player of filteredPlayers" (click)="onSelect(player)">
           {{ player }}
         </li>
       </ul>
     </div>
-    <!-- <h2>Login</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Username:</label>
-        <input
-          type="text"
-          id="username"
-          [(ngModel)]="discordTag"
-          name="username"
-          required
-        />
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          [(ngModel)]="password"
-          name="password"
-          required
-        /> -->
-    <!-- </div>
-      <button type="submit">Login</button>
-    </form> -->
   </div>
 </div>
