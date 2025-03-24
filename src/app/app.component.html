@@ -29,27 +29,34 @@
   </div>
 
   <div class="login-container">
+    <h1 class="login-title">DÊ MATCH</h1>
     <div class="player-select" (clickOutside)="isDropdownVisible = false">
-      <input
-        type="text"
-        placeholder="Search your name..."
-        (input)="onSearchInput($event)"
-        [(ngModel)]="selectedPlayer"
-        (focus)="isDropdownVisible = true"
-      />
+      <div class="input-container">
+        <input
+          type="text"
+          placeholder="Encontre seu nome..."
+          (input)="onSearchInput($event)"
+          [(ngModel)]="selectedPlayer"
+          (focus)="isDropdownVisible = true"
+        />
 
-      <span
-        class="arrow"
-        [class.rotated]="isDropdownVisible"
-        (click)="toggleDropdown($event)"
-        >▼</span
-      >
+        <span
+          class="arrow"
+          [class.rotated]="isDropdownVisible"
+          (click)="toggleDropdown($event)"
+          >▼</span
+        >
 
-      <ul class="dropdown" *ngIf="isDropdownVisible && filteredPlayers.length">
-        <li *ngFor="let player of filteredPlayers" (click)="onSelect(player)">
-          {{ player }}
-        </li>
-      </ul>
+        <ul
+          class="dropdown"
+          *ngIf="isDropdownVisible && filteredPlayers.length"
+        >
+          <li *ngFor="let player of filteredPlayers" (click)="onSelect(player)">
+            {{ player }}
+          </li>
+        </ul>
+      </div>
     </div>
+    <button>ENTRAR</button>
   </div>
 </div>

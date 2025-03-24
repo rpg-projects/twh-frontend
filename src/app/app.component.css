@@ -18,7 +18,7 @@
 
 .bg-image {
   position: absolute;
-  max-width: 200px; /* Adjust size */
+  max-width: 2000px; /* Adjust size */
 }
 
 .eros,
@@ -31,48 +31,55 @@
 }
 
 .eros {
-  top: 20%;
+  top: 24%;
   left: 5%;
-  width: 12%;
+  width: 10%;
+  transform: rotate(26deg);
 }
 
 .houses {
-  top: 70%;
-  left: 15%;
-  width: 20%;
-  max-width: 600px;
+  top: 68%;
+  left: 20%;
+  width: 30%;
+  max-width: 40%;
   transform: rotate(4deg); /* Corrected rotation */
 }
 
 .houses2 {
-  top: 70%;
-  left: 0%;
-  width: 20%;
-  max-width: 600px;
+  top: 68%;
+  left: -2%;
+  width: 30%;
+  max-width: 40%;
   transform: rotate(-4deg); /* Corrected rotation */
 }
 
 .couple {
-  bottom: 10%;
-  left: 40%;
+  z-index: 3;
+  bottom: 5%;
+  left: 18%;
+  width: 40%;
+  max-width: 12%;
 }
 
 .leaves {
   top: -2%;
   right: -0.5%;
+  width: 60%;
+  max-width: 8%;
 }
 
 .mountain {
-  bottom: 10%;
-  left: 40%;
+  bottom: -24%;
+  left: -20%;
+  width: 90%;
+  max-width: 80%;
 }
 
-.content {
-  position: absolute; /* Ensures it floats above everything */
-  margin: 20%;
-  transform: translate(-40%, -50%);
-  text-align: center;
-  z-index: 2; /* Ensures it's above background & other elements */
+.login-title {
+  font-family: "Graduate";
+  font-size: 72px;
+  color: #ae1b62;
+  margin-bottom: 4%;
 }
 
 .login-container {
@@ -82,7 +89,8 @@
   text-align: center;
   z-index: 2; /* Ensures it's above background & other elements */
 
-  width: 300px;
+  width: 25%;
+  height: 25%;
 
   padding: 20px;
   border: 1px solid #ccc;
@@ -92,8 +100,9 @@
 
 .player-select {
   position: relative;
-  width: 250px;
-  margin: 20px auto;
+  width: 54%; /* Ajusta para telas menores */
+  /* max-width: 300px; */
+  margin: 2% auto 5%;
 }
 
 .input-container {
@@ -101,7 +110,7 @@
   align-items: center;
   border: 2px solid #ccc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 20px;
   transition: border 0.3s ease-in-out;
   background: white;
   cursor: pointer;
@@ -121,12 +130,11 @@
 .arrow {
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-left: 10px;
-  font-size: 14px;
+  display: inline-block; /* Essencial para transformações */
 }
 
 .arrow.rotated {
-  transform: rotate(180deg);
+  transform: rotate(180deg); /* Gira a seta ao abrir */
 }
 
 .dropdown {
@@ -154,36 +162,17 @@
   background: #f0f0f0;
 }
 
-/* 
-.login-container h2 {
-  text-align: center;
-}
-
-.login-container div {
-  margin-bottom: 15px;
-}
-
-.login-container label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-.login-container input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
 .login-container button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+  width: 30%;
+  padding: 3%;
+  background-color: #ae1b62;
   color: white;
+  font-size: 16px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .login-container button:hover {
-  background-color: #0056b3;
-} */
+  background-color: #991d59;
+}
