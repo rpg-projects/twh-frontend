@@ -1,0 +1,187 @@
+.page {
+  background-color: #ffb9db;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0; /* Keeps background behind everything */
+}
+
+.bg-image {
+  position: absolute;
+  max-width: 2000px; /* Adjust size */
+}
+
+.eros,
+.houses,
+.houses2,
+.couple,
+.leaves,
+.mountain {
+  position: absolute; /* Ensures elements can be placed freely */
+}
+
+.eros {
+  top: 26%;
+  left: 5%;
+  width: 10%;
+  transform: rotate(28deg);
+}
+
+.houses {
+  top: 68%;
+  left: 23%;
+  width: 35%;
+  max-width: 40%;
+  transform: rotate(6deg); /* Corrected rotation */
+}
+
+.houses2 {
+  top: 68%;
+  left: -3%;
+  width: 35%;
+  max-width: 40%;
+  transform: rotate(-5deg); /* Corrected rotation */
+}
+
+.couple {
+  z-index: 3;
+  bottom: 5%;
+  left: 18%;
+  width: 40%;
+  max-width: 12%;
+}
+
+.leaves {
+  top: -2%;
+  right: -0.5%;
+  width: 60%;
+  max-width: 8%;
+}
+
+.mountain {
+  bottom: -20%;
+  left: -20%;
+  width: 90%;
+  max-width: 80%;
+}
+
+.login-title {
+  font-family: "Graduate";
+  font-size: 72px;
+  color: #ae1b62;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.login-container {
+  position: absolute; /* Ensures it floats above everything */
+  top: 20%;
+  right: 20%;
+  text-align: center;
+  z-index: 2; /* Ensures it's above background & other elements */
+
+  width: 27%;
+  height: 27%;
+
+  padding: 1%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container:hover {
+  background-color: #f2afcf;
+}
+
+.player-select {
+  position: relative;
+  width: 54%; /* Ajusta para telas menores */
+  /* max-width: 300px; */
+  margin: 2% auto 5%;
+  z-index: 5;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  transition: border 0.3s ease-in-out;
+  background: white;
+  cursor: pointer;
+}
+
+.input-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-container:focus-within {
+  border-color: #007bff;
+}
+
+.arrow {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: inline-block; /* Essencial para transformações */
+}
+
+.arrow.rotated {
+  transform: rotate(180deg); /* Gira a seta ao abrir */
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.dropdown li:hover {
+  background: #f0f0f0;
+}
+
+.login-container button {
+  width: 30%;
+  padding: 3%;
+  background-color: #ae1b62;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+.login-container button:hover {
+  background-color: #991d59;
+}
