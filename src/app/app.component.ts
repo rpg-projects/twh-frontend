@@ -51,8 +51,6 @@ export class AppComponent {
   onSelect(player: string) {
     this.selectedPlayer = player;
     this.isDropdownVisible = false;
-
-    this.router.navigate(['/home']); // Redirect to home
   }
 
   toggleDropdown(event: Event) {
@@ -68,7 +66,7 @@ export class AppComponent {
     }
   }
 
-  // onSubmit() {
-  //   console.log('hello world');
-  // }
+  onSubmit() {
+    this.router.navigate(['/home']); // Redirect to home
+  }
 }
