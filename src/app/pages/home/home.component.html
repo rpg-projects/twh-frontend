@@ -7,14 +7,16 @@
 </header> -->
 <app-header></app-header>
 
-<main>
-  <h2>Seus chars:</h2>
-  <p>Escolha um para ver os matches</p>
+<main class="home">
+  <div class="title">
+    <h2>Seus chars</h2>
+    <p>Escolha um para ver detalhes</p>
+  </div>
 
   <ul class="card-grid">
     <li *ngFor="let char of characters" class="card">
       <div class="card-content">
-        <h2 class="name">{{ char.name }}</h2>
+        <h3 class="name">{{ char.name }}</h3>
         <p class="god">{{ char.god }}</p>
         <p class="level-summer">
           Nível {{ char.level }}, Verão {{ char.summer }}

@@ -27,6 +27,7 @@
 
 .logout-btn {
   color: white;
+  background-color: #ec5a81;
   font-family: "Tahoma";
   font-size: 16px;
 
@@ -38,16 +39,3 @@
   padding: 1.4%;
   margin-top: 0;
 }
-
-/* width: 30%;
-max-width: 520px;
-padding: 3%;
-
-background-color: #ae1b62;
-color: white;
-font-family: "Tahoma";
-font-size: 16px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-margin-top: 2%; */
