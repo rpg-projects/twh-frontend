@@ -25,3 +25,21 @@ body {
   font-family: "Tahoma", sans-serif;
   letter-spacing: 1px;
 }
+
+button {
+  width: 30%;
+  max-width: 520px;
+  padding: 3%;
+  background-color: #ae1b62;
+  color: white;
+  font-family: "Tahoma";
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2%;
+}
+
+button:hover {
+  background-color: #991d59;
+}

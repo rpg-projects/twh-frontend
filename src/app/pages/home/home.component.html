@@ -9,11 +9,17 @@
 <main>
   <h2>Seus chars:</h2>
   <p>Escolha um para ver os matches</p>
-  <ul>
-    <li *ngFor="let char of characters">
-      <strong>{{ char.name }}</strong> ({{ char.god }} - Level {{ char.level }},
-      Summer {{ char.summer }}) -
-      <a [href]="char.fileLink" target="_blank">Open File</a>
+
+  <ul class="card-grid">
+    <li *ngFor="let char of characters" class="card">
+      <div class="card-content">
+        <h2 class="name">{{ char.name }}</h2>
+        <p class="god">{{ char.god }}</p>
+        <p class="level-summer">
+          Nível {{ char.level }}, Verão {{ char.summer }}
+        </p>
+        <a [href]="char.fileLink" class="btn" target="_blank">Ficha</a>
+      </div>
     </li>
   </ul>
 </main>
