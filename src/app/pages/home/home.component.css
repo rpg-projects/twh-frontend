@@ -1,4 +1,4 @@
-header {
+/* header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,7 +23,7 @@ header {
   border: none;
   padding: 8px 12px;
   cursor: pointer;
-}
+} */
 
 ul {
   list-style: none;

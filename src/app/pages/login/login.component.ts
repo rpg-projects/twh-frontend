@@ -49,7 +49,7 @@ export class LoginComponent {
     this.filteredPlayers =
       searchTerm.length > 0
         ? this.players.filter((player) =>
-            player.toLowerCase().includes(query.toLowerCase())
+            player.toLowerCase().startsWith(query.toLowerCase())
           )
         : [];
 

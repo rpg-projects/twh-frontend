@@ -33,8 +33,8 @@ export class HomeComponent {
     }
   }
 
-  logout() {
-    localStorage.removeItem('userName'); // Clear localStorage
-    this.router.navigate(['/login']); // Redirect to login
-  }
+  // logout() {
+  //   localStorage.removeItem('userName'); // Clear localStorage
+  //   this.router.navigate(['/login']); // Redirect to login
+  // }
 }

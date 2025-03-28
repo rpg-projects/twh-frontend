@@ -8,6 +8,24 @@
   overflow: hidden; /* Prevents unwanted scrolling */
 }
 
+.left {
+  float: left;
+  display: flex;
+  align-items: center;
+  margin-left: 1.5%;
+  margin-top: 0.8%;
+}
+
+.left .logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.left .logo-title {
+  font-family: "DisneyHeroic";
+  font-size: 1.7rem;
+}
+
 .background {
   position: fixed;
   width: 100%;
