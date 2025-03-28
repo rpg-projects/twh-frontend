@@ -1,4 +1,19 @@
-<div class="home-page">
-  <h1>Welcome, {{ userName }}!</h1>
-  <button (click)="logout()">Logout</button>
-</div>
+<header>
+  <div class="left">
+    <img src="../../../assets/images/logo.png" alt="Logo" class="logo" />
+    <h1>twhinder</h1>
+  </div>
+  <button class="logout" (click)="logout()">Logout</button>
+</header>
+
+<main>
+  <h2>Seus chars:</h2>
+  <p>Escolha um para ver os matches</p>
+  <ul>
+    <li *ngFor="let char of characters">
+      <strong>{{ char.name }}</strong> ({{ char.god }} - Level {{ char.level }},
+      Summer {{ char.summer }}) -
+      <a [href]="char.fileLink" target="_blank">Open File</a>
+    </li>
+  </ul>
+</main>

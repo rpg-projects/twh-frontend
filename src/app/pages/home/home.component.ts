@@ -1,5 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PlayerService } from '../../services/player.service';
+
+export interface IChar {
+  summer: string;
+  name: string;
+  fileLink: string;
+  god: string;
+  level: number;
+}
 
 @Component({
   selector: 'app-home',
@@ -8,14 +17,19 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   userName: string | null = '';
+  characters: IChar[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private playerService: PlayerService) {}
 
   ngOnInit() {
     this.userName = localStorage.getItem('userName'); // Retrieve stored name
-    console.log('this.userName :>> ', this.userName);
+
     if (!this.userName) {
       this.router.navigate(['/login']); // Redirect to login if no user found
+    } else {
+      this.playerService.getPlayersSheets(this.userName).subscribe((data) => {
+        this.characters = data;
+      });
     }
   }
 
