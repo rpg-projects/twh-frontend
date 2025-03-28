@@ -1,26 +1,53 @@
-header {
+.header-component {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: #333;
-  color: white;
+  padding: 1.2% 0.2%;
+  height: 3%;
+  background: #f889bf;
+  color: black;
 }
 
-.left {
+.header-component .logo-container {
   display: flex;
   align-items: center;
+  margin-left: 1%;
+  margin-top: 0.2%;
 }
 
-.logo {
+.logo-container .logo {
   height: 40px;
   margin-right: 10px;
 }
 
-.logout {
-  background: red;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  cursor: pointer;
+.logo-container .logo-title {
+  font-family: "DisneyHeroic";
+  font-size: 1.6rem;
 }
+
+.logout-btn {
+  color: white;
+  font-family: "Tahoma";
+  font-size: 16px;
+
+  border: none;
+  cursor: pointer;
+
+  width: 12%;
+  max-width: 520px;
+  padding: 1.4%;
+  margin-top: 0;
+}
+
+/* width: 30%;
+max-width: 520px;
+padding: 3%;
+
+background-color: #ae1b62;
+color: white;
+font-family: "Tahoma";
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 2%; */
