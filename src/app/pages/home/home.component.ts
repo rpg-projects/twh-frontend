@@ -8,6 +8,8 @@ export interface IChar {
   fileLink: string;
   god: string;
   level: number;
+  avatar: string;
+  avatarId: string;
 }
 
 @Component({

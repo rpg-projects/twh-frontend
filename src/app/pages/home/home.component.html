@@ -16,6 +16,8 @@
   <ul class="card-grid">
     <li *ngFor="let char of characters" class="card">
       <div class="card-content">
+        <img [src]="char.avatar" [alt]="char.name" />
+
         <h3 class="name">{{ char.name }}</h3>
         <p class="god">{{ char.god }}</p>
         <p class="level-summer">
