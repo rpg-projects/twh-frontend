@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-path docs  --base-href /ng-deploy",
+    "build": "ng build --output-path docs --base-href /twh-frontend",
     "deploy": "npx angular-cli-ghpages --dir=dist/twh-frontend",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
