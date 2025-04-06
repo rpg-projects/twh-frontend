@@ -9,14 +9,14 @@ body {
 
 @font-face {
   font-family: "DisneyHeroic";
-  src: url("/assets/fonts/DisneyHeroic.ttf") format("truetype");
+  src: url("assets/fonts/DisneyHeroic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Graduate";
-  src: url("/assets/fonts/Graduate-Regular.ttf") format("truetype");
+  src: url("assets/fonts/Graduate-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
